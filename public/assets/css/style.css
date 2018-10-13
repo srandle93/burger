@@ -1,11 +1,15 @@
+body{
+background-color: yellow
+};
 .text {
-
+font: orange
 };
 #already_eaten {
 
 };
 img {
-
+height: 50px;
+width: 50px
 };
 #newBurger {
 
@@ -15,4 +19,4 @@ img {
 };
 #ready_to_eat {
 
-};
+}
