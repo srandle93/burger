@@ -27,11 +27,11 @@ const orm = {
 
   // insertOne()
   insertOne: (burger_name, callback) => {
+    let queryString = 'INSERT INTO burgers SET ?';
     // Run MySQL Query
-    connection.query('INSERT INTO burgers SET ?', {
-      burger_name: burger_name, 
-      devoured: false
-    },
+    connection.query(queryString, 
+      [{burger_name: burger_name}, 
+      {devoured: false}],
       (err, result) => {
       if (err) throw err;
       callback(result);
