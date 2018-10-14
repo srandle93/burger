@@ -19,7 +19,7 @@ const orm = {
   selectAll: (callback) => {
     // Run MySQL Query
     connection.query('SELECT * FROM burgers', (err, result) => {
-      // if (err) throw err;
+      if (err) throw err;
       callback(result);
     });
 
@@ -43,7 +43,7 @@ const orm = {
   updateOne: (burgerID, callback) => {
     // Run MySQL Query
     connection.query('UPDATE burgers SET ? WHERE ?', [{devoured: true}, {id: burgerID}], (err, result) => {
-        // if (err) throw err;
+        if (err) throw err;
         callback(result);
       });
 
