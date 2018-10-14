@@ -1,16 +1,17 @@
 body{
-background-color: yellow
+background-color: yellow;
 };
 .text {
-font: orange
+color: brown;
 };
 #already_eaten {
 
 };
-img {
-height: 50px;
-width: 50px
-};
+/* #pic {
+width: 140px;
+height: 250px;
+align-content: center;
+}; */
 #newBurger {
 
 };

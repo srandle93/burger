@@ -3,10 +3,10 @@ const mysql = require('mysql');
 let connection;
 
 // For Heroku Deployment vs. Local MySQL Database
-if(process.env.PORT) {
+if (process.env.PORT) {
   connection = mysql.createConnection(process.env.PORT);
 }
-else{
+else {
   connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',

@@ -1,7 +1,7 @@
 // Node Dependencies
 let express = require('express');
 let router = express.Router();
-const burger = require('../models/burger.js');
+let burger = require('../models/burger.js');
 
 
 // Create routes
@@ -24,7 +24,7 @@ router.get('/index', (req, res) => {
 
 // Create a New Burger
 router.post('/burger/create', (req, res) => {
-  burger.create(req.body.burger_name, () => {
+  burger.insertOne(req.body.burger_name, () => {
     res.redirect('/index');
   });
 });
@@ -32,7 +32,7 @@ router.post('/burger/create', (req, res) => {
 
 // Devour a Burger
 router.post('/burger/eat/:id', (req, res) => {
-  burger.updateById(req.params.id, () =>{
+  burger.updateOne(req.params.id, () =>{
     res.redirect('/index');
   });
 });
