@@ -19,6 +19,7 @@ const orm = {
   selectAll: (callback) => {
     // Run MySQL Query
     connection.query('SELECT * FROM burgers', (err, result) => {
+      // The code on line 23 is broken according to heroku.
       if (err) throw err;
       callback(result);
     });
