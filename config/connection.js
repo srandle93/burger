@@ -1,10 +1,10 @@
 // Set up MySQL connection.
 const mysql = require('mysql');
 let connection;
-const PORT = 3000;
+
 // For Heroku Deployment vs. Local MySQL Database
-if (process.env.PORT) {
-  connection = mysql.createConnection(process.env.PORT);
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
 }
 else {
   connection = mysql.createConnection({
@@ -18,6 +18,3 @@ else {
 // Export connection for our ORM to use.
 module.exports = connection;
 
-app.listen(PORT, function() {
-  console.log("Burger app is listening on PORT: " + PORT);
-});

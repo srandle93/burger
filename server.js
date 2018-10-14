@@ -20,5 +20,5 @@ const routes = require('./controllers/burgers_controller.js');
 app.use('/', routes);
 
 // Open Server
-const port = process.env.PORT || 3000;
-app.listen(port);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT);
