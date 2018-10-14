@@ -1,8 +1,8 @@
 // Node Dependencies
-let express = require('express');
-let bodyParser = require('body-parser');
-let exphbs = require('express-handlebars');
-let app = express();
+const express = require('express');
+const bodyParser = require('body-parser');
+const exphbs = require('express-handlebars');
+const app = express();
 
 //Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(process.cwd() + '/public'));
@@ -16,9 +16,9 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 
-let router = require('./controllers/burgers_controller.js');
-app.use('/', router);
+const routes = require('./controllers/burgers_controller.js');
+app.use('/', routes);
 
 // Open Server
-let port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 app.listen(port);

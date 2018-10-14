@@ -1,8 +1,5 @@
 let connection = require('./connection.js');
 
-
-
-
 // Connect to MySQL database
 connection.connect((err) => {
   if (err) {

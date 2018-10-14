@@ -1,7 +1,7 @@
 // Node Dependencies
-let express = require('express');
-let router = express.Router();
-let burger = require('../models/burger.js');
+const express = require('express');
+const router = express.Router();
+const burgers = require('../models/burger.js');
 
 
 // Create routes
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 
 // Index Page (render all burgers to DOM)
 router.get('/index', (req, res) => {
-  burger.selectAll((data) => {
+  burgers.selectAll((data) => {
     const burgerObject = { burgers: data };
     //console.log(hbsObject);
     res.render('index', burgerObject);
@@ -24,7 +24,7 @@ router.get('/index', (req, res) => {
 
 // Create a New Burger
 router.post('/burger/create', (req, res) => {
-  burger.insertOne(req.body.burger_name, () => {
+  burgers.insertOne(req.body.burger_name, () => {
     res.redirect('/index');
   });
 });
@@ -32,12 +32,10 @@ router.post('/burger/create', (req, res) => {
 
 // Devour a Burger
 router.post('/burger/eat/:id', (req, res) => {
-  burger.updateOne(req.params.id, () =>{
+  burgers.updateOne(req.params.id, () =>{
     res.redirect('/index');
   });
 });
-// ----------------------------------------------------
-
 
 // Export routes
 module.exports = router;
