@@ -43,7 +43,7 @@ const orm = {
   updateOne: (burgerID, callback) => {
     // Run MySQL Query
     connection.query('UPDATE burgers SET ? WHERE ?', [{devoured: true}, {id: burgerID}], (err, result) => {
-        if (err) throw err;
+        // if (err) throw err;
         callback(result);
       });
 
